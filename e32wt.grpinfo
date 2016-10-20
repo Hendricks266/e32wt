@@ -1,0 +1,15 @@
+
+grpinfo
+{
+    name "Duke Nukem 3D: 20th Anniversary World Tour (Compatibility Stopgap)"
+
+    size 44486702
+    crc -1988547067
+
+    scriptname "E32WT.CON"
+    defname "e32wt.def"
+
+    dependency 0
+
+    flags GAMEFLAG_DUKE
+}
