@@ -3,8 +3,8 @@ grpinfo
 {
     name "Duke Nukem 3D: 20th Anniversary World Tour (Compatibility Stopgap)"
 
-    size 44486702
-    crc -1988547067
+    size 44356548
+    crc -1742012854
 
     scriptname "E32WT.CON"
     defname "e32wt.def"
