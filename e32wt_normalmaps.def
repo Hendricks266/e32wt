@@ -143,6 +143,7 @@ texture 397 { normal { file "textures\TILES001\0397_n.bmp" parallaxbias 0 parall
 texture 398 { normal { file "textures\TILES001\0398_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 399 { normal { file "textures\TILES001\0399_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 400 { normal { file "textures\TILES001\0400_n.bmp" parallaxbias 0 parallaxscale 0 } }
+texture 402 { normal { file "textures\TILES001\0402_n.tga" parallaxbias 0 parallaxscale 0 } }
 texture 403 { normal { file "textures\TILES001\0403_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 412 { normal { file "textures\TILES001\0412_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 413 { normal { file "textures\TILES001\0413_n.bmp" parallaxbias 0 parallaxscale 0 } }
@@ -412,6 +413,8 @@ texture 4224 { normal { file "textures\TILES016\4224_n.bmp" parallaxbias 0 paral
 texture 4225 { normal { file "textures\TILES016\4225_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 4226 { normal { file "textures\TILES016\4226_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 4227 { normal { file "textures\TILES016\4227_n.bmp" parallaxbias 0 parallaxscale 0 } }
+texture 4228 { normal { file "textures\TILES016\4228_n.tga" parallaxbias 0 parallaxscale 0 } }
+texture 4229 { normal { file "textures\TILES016\4229_n.tga" parallaxbias 0 parallaxscale 0 } }
 texture 4235 { normal { file "textures\TILES016\4235_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 4236 { normal { file "textures\TILES016\4236_n.bmp" parallaxbias 0 parallaxscale 0 } }
 texture 4238 { normal { file "textures\TILES016\4238_n.bmp" parallaxbias 0 parallaxscale 0 } }
