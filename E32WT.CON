@@ -202,6 +202,8 @@ definequote 125       AMMO FOR INCINERATOR!
 definequote 126       INCINERATOR!
 definequote 127       PRESS USE TO RESPAWN
 definequote 128       GAME SAVED
+definequote 129       AUTO AIM OFF
+definequote 130       AUTO AIM ON
 
 definevolumename 0 L.A. MELTDOWN
 definevolumename 1 LUNAR APOCALYPSE
