@@ -52,7 +52,6 @@ enda
 
 // Instantiate variables for our own use
 var wt_i 0 0
-var wt_j 0 0
 var wt_temp 0 0
 var wt_myvar 0 2
 
