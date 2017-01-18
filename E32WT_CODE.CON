@@ -41,11 +41,11 @@ endevent
 actor FIREFLYFLYINGEFFECT 0 FLYING_FRAMES
 	ifactioncount 7
 		killit
-	ifcount 2 
+	ifcount 2
 		nullop
 	else ifcount 1 {
 		sizeat 32 32
-		cstator 18432 
+		cstator 18432
 	}
 enda
 
