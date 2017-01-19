@@ -42,12 +42,14 @@ gamevar hud_temp2 0 1
 gamevar hud_temp3 0 1
 gamevar hud_temp4 0 1
 
-/*
-// The following temporary gamevars are named differently because they are used
-// in G_Draw[...] which would overwrite their values if used elsewhere.
-*/
-gamevar hud_G_Draw_temp 0 1
-gamevar hud_G_Draw_temp2 0 1
+// The following temporary gamevars are internal to the G_Draw subroutines.
+gamevar hud_int_temp 0 1
+gamevar hud_int_temp2 0 1
+gamevar hud_int_x 0 1
+gamevar hud_int_y 0 1
+gamevar hud_int_scale 0 1
+gamevar hud_int_angle 0 1
+gamevar hud_int_orientation 0 1
 
 gamevar weapon_pos 0 1
 gamevar weaponscale 0 1
@@ -58,106 +60,105 @@ gamevar playerid 0 1
 // preliminary functions
 
 state G_DrawTilePal
-    ifvarand hud_orientation 4
-        addvar hud_angle 1024
-
-    orvar hud_orientation 2
-
-    rotatesprite hud_x hud_y hud_scale hud_angle hud_tilenum hud_shade hud_pal hud_orientation windowx1 windowy1 windowx2 windowy2
-
-    ifvarand hud_orientation 2
-        xorvar hud_orientation 2
+    setvarvar hud_int_angle hud_angle
+    setvarvar hud_int_orientation hud_orientation
 
     ifvarand hud_orientation 4
-        subvar hud_angle 1024
+        addvar hud_int_angle 1024
+
+    orvar hud_int_orientation 2
+
+    rotatesprite hud_x hud_y hud_scale hud_int_angle hud_tilenum hud_shade hud_pal hud_int_orientation windowx1 windowy1 windowx2 windowy2
 ends
 
 state G_DrawTileScaled
-    setvar hud_G_Draw_temp 192 // xoff
+    setvarvar hud_int_x hud_x
+    setvarvar hud_int_y hud_y
+    setvarvar hud_int_scale hud_scale
+    setvarvar hud_int_angle hud_angle
+    setvarvar hud_int_orientation hud_orientation
+
+    shiftvarl hud_int_x 16
+    shiftvarl hud_int_y 16
+
+    setvar hud_int_temp 12582912 // 192<<16
 
     switch currentweapon
         case DEVISTATOR_WEAPON
         case TRIPBOMB_WEAPON
-            setvar hud_G_Draw_temp 160
+            setvar hud_int_temp 10485760 // 160<<16
             break
         default
             ifvarand hud_orientation 262144
             {
-                setvar hud_G_Draw_temp 160
-                xorvar hud_orientation 262144
+                setvar hud_int_temp 10485760 // 160<<16
+                xorvar hud_int_orientation 262144
             }
             break
     endswitch
 
     ifvarand hud_orientation 4
-        addvar hud_angle 1024
+        addvar hud_int_angle 1024
 
     /*
     ifvarg rendermode 2
         ifvarn usemodels 0
             ifhasmodel hud_tilenum hud_pal
             {
-                setvar hud_G_Draw_temp2 224
-                mulvarvar hud_G_Draw_temp2 weaponscale
-                divvar hud_G_Draw_temp2 100
+                setvar hud_int_temp2 14680064 // 224<<16
+                mulvarvar hud_int_temp2 weaponscale
+                divvar hud_int_temp2 100
 
-                addvar hud_y 224
-                subvarvar hud_y hud_G_Draw_temp2
+                addvar hud_int_y 14680064 // 224<<16
+                subvarvar hud_int_y hud_int_temp2
             }
     */
 
-    mulvarvar hud_x weaponscale
-    divvar hud_x 100
-    setvarvar hud_G_Draw_temp2 hud_G_Draw_temp
-    mulvarvar hud_G_Draw_temp2 weaponscale
-    divvar hud_G_Draw_temp2 100
-    subvarvar hud_G_Draw_temp hud_G_Draw_temp2
-    addvarvar hud_x hud_G_Draw_temp
+    mulvarvar hud_int_x weaponscale
+    divvar hud_int_x 100
+    setvarvar hud_int_temp2 hud_int_temp
+    mulvarvar hud_int_temp2 weaponscale
+    divvar hud_int_temp2 100
+    subvarvar hud_int_temp hud_int_temp2
+    addvarvar hud_int_x hud_int_temp
 
-    mulvarvar hud_y weaponscale
-    divvar hud_y 100
-    setvar hud_G_Draw_temp 200
-    setvarvar hud_G_Draw_temp2 hud_G_Draw_temp
-    mulvarvar hud_G_Draw_temp2 weaponscale
-    divvar hud_G_Draw_temp2 100
-    subvarvar hud_G_Draw_temp hud_G_Draw_temp2
-    addvarvar hud_y hud_G_Draw_temp
+    mulvarvar hud_int_y weaponscale
+    divvar hud_int_y 100
+    setvar hud_int_temp 13107200 // 200<<16
+    setvarvar hud_int_temp2 hud_int_temp
+    mulvarvar hud_int_temp2 weaponscale
+    divvar hud_int_temp2 100
+    subvarvar hud_int_temp hud_int_temp2
+    addvarvar hud_int_y hud_int_temp
 
-    // setvar hud_scale 65536 // do this elsewhere; leave it open for modification
-    mulvarvar hud_scale weaponscale
-    divvar hud_scale 100
+    mulvarvar hud_int_scale weaponscale
+    divvar hud_int_scale 100
 
-    orvar hud_orientation 2
+    orvar hud_int_orientation 2050 // 2|2048
 
-    rotatesprite hud_x hud_y hud_scale hud_angle hud_tilenum hud_shade hud_pal hud_orientation windowx1 windowy1 windowx2 windowy2
-
-    ifvarand hud_orientation 2
-        xorvar hud_orientation 2
-
-    ifvarand hud_orientation 4
-        subvar hud_angle 1024
+    rotatesprite hud_int_x hud_int_y hud_int_scale hud_int_angle hud_tilenum hud_shade hud_pal hud_int_orientation windowx1 windowy1 windowx2 windowy2
 ends
 
 state G_DrawWeaponTile
     // basic fading between player weapon shades
     ifvarvarn hud_shade hud_shadef
     {
-        setvar hud_G_Draw_temp 0
-        ifvare hud_pal 0 setvar hud_G_Draw_temp 1
-        ifvarvare hud_pal hud_palf setvar hud_G_Draw_temp 1
-        ifvare hud_G_Draw_temp 1
+        setvar hud_int_temp 0
+        ifvare hud_pal 0 setvar hud_int_temp 1
+        ifvarvare hud_pal hud_palf setvar hud_int_temp 1
+        ifvare hud_int_temp 1
         {
-            setvarvar hud_G_Draw_temp hud_shade
-            subvarvar hud_G_Draw_temp hud_shadef
-            setvarvar hud_G_Draw_temp2 hud_G_Draw_temp
-            shiftvarr hud_G_Draw_temp 2
-            addvarvar hud_shadef hud_G_Draw_temp
+            setvarvar hud_int_temp hud_shade
+            subvarvar hud_int_temp hud_shadef
+            setvarvar hud_int_temp2 hud_int_temp
+            shiftvarr hud_int_temp 2
+            addvarvar hud_shadef hud_int_temp
 
-            ifvare hud_G_Draw_temp 0
+            ifvare hud_int_temp 0
             {
-                shiftvarr hud_G_Draw_temp2 1
-                addvarvar hud_shadef hud_G_Draw_temp2
-                ifvare hud_G_Draw_temp2 0
+                shiftvarr hud_int_temp2 1
+                addvarvar hud_shadef hud_int_temp2
+                ifvare hud_int_temp2 0
                     setvarvar hud_shadef hud_shade
             }
         }
@@ -175,17 +176,17 @@ state G_DrawWeaponTile_crystal
     // basic fading between player weapon shades
     ifvarvarn hud_shade hud_shadef_crystal
     {
-        setvarvar hud_G_Draw_temp hud_shade
-        subvarvar hud_G_Draw_temp hud_shadef_crystal
-        setvarvar hud_G_Draw_temp2 hud_G_Draw_temp
-        shiftvarr hud_G_Draw_temp 2
-        addvarvar hud_shadef_crystal hud_G_Draw_temp
+        setvarvar hud_int_temp hud_shade
+        subvarvar hud_int_temp hud_shadef_crystal
+        setvarvar hud_int_temp2 hud_int_temp
+        shiftvarr hud_int_temp 2
+        addvarvar hud_shadef_crystal hud_int_temp
 
-        ifvare hud_G_Draw_temp 0
+        ifvare hud_int_temp 0
         {
-            shiftvarr hud_G_Draw_temp2 1
-            addvarvar hud_shadef_crystal hud_G_Draw_temp2
-            ifvare hud_G_Draw_temp2 0
+            shiftvarr hud_int_temp2 1
+            addvarvar hud_shadef_crystal hud_int_temp2
+            ifvare hud_int_temp2 0
                 setvarvar hud_shadef_crystal hud_shade
         }
     }
@@ -220,8 +221,8 @@ state determine_animation
     ifvarand player[THISACTOR].gm 1 // MODE_MENU
         orvar hud_temp 1
 
-    getactor[playerid].pal hud_G_Draw_temp
-    ifvare hud_G_Draw_temp 1
+    getactor[playerid].pal hud_int_temp
+    ifvare hud_int_temp 1
         orvar hud_temp 1
 ends
 
@@ -242,7 +243,6 @@ state draw_shrunk_fists // Shrunk Running Fists
     }
     // common calculations continued
     setvarvar hud_temp2 hud_fistsign
-    andvar hud_temp2 2047
     sin hud_temp2 hud_temp2
     setvarvar hud_temp4 hud_temp2
     shiftvarr hud_temp2 10
@@ -355,15 +355,15 @@ state draw_kick // KNEE_WEAPON:
         ifvarg weaponcount 4
             ifvarl weaponcount 10
             {
-            addvar hud_x 160
+                addvar hud_x 160
 
-            addvar hud_y 214
+                addvar hud_y 214
 
-            addvar hud_tilenum 1
+                addvar hud_tilenum 1
 
-            state G_DrawTileScaled
+                state G_DrawTileScaled
 
-            setvar hud_temp3 1
+                setvar hud_temp3 1
             }
 
         ifvare hud_temp3 0
@@ -392,7 +392,7 @@ state draw_tripbomb // TRIPBOMB_WEAPON:
     else ifvarl weaponcount 4
     {
         setvarvar hud_temp currentweapon
-        shiftvarl currentweapon 2
+        shiftvarl hud_temp 2
         guniqhudid hud_temp
 
         addvar hud_x 142
@@ -455,7 +455,6 @@ state draw_rpg // RPG_WEAPON:
     setvarvar hud_temp weaponcount
     shiftvarl hud_temp 7
     addvar hud_temp 768
-    andvar hud_temp 2047
     sin hud_temp hud_temp
     shiftvarr hud_temp 11
 
@@ -1451,7 +1450,6 @@ state draw_expander // GROW_WEAPON:
         addvar hud_tilenum 2
 
         getplayer[THISACTOR].random_club_frame hud_shade
-        andvar hud_shade 2047
         sin hud_shade hud_shade
         shiftvarr hud_shade 10
         mulvar hud_shade -1
@@ -1553,7 +1551,6 @@ state draw_shrinker // SHRINKER_WEAPON:
         addvar hud_tilenum 2
 
         getplayer[THISACTOR].random_club_frame hud_shade
-        andvar hud_shade 2047
         sin hud_shade hud_shade
         shiftvarr hud_shade 10
         mulvar hud_shade -1
@@ -1582,8 +1579,6 @@ ends
 // framework
 
 onevent EVENT_DISPLAYWEAPON // P_DisplayWeapon
-
-    setvar RETURN -1
 
     getplayer[THISACTOR].weapon_pos weapon_pos
     getuserdef[THISACTOR].weaponscale weaponscale
@@ -1635,7 +1630,7 @@ onevent EVENT_DISPLAYWEAPON // P_DisplayWeapon
         endswitch
 
         ifvarn hud_tilenum -1
-            {
+        {
             setvar hud_x 160
             setvarvar hud_y weapon_pos
             mulvarvar hud_y weapon_pos
@@ -1645,7 +1640,9 @@ onevent EVENT_DISPLAYWEAPON // P_DisplayWeapon
             mulvarvar hud_scale hud_temp2
             divvar hud_scale 100
             rotatesprite hud_x hud_y hud_scale 0 hud_tilenum 0 0 2 windowx1 windowy1 windowx2 windowy2
-            }
+        }
+
+        setvar RETURN -1
     }
 
     ifvarn hud_temp 1 break // If we are not displaying the actual HUD weapons, stop processing.
@@ -1732,6 +1729,8 @@ onevent EVENT_DISPLAYWEAPON // P_DisplayWeapon
         setvar hud_angle 0
         guniqhudid 0
     }
+
+    setvar RETURN -1
 endevent
 
 onevent EVENT_DISPLAYKNUCKLES
