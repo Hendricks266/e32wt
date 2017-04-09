@@ -3,13 +3,13 @@ grpinfo
 {
     name "Duke Nukem 3D: 20th Anniversary World Tour [Stopgap]"
 
-    size 44356548
-    crc -1742012854
+    size 37
+    crc 1540379747
 
     scriptname "E32WT.CON"
     defname "e32wt.def"
 
-    dependency 0
+    dependency -1742012854
 
     flags GAMEFLAG_DUKE
 }
