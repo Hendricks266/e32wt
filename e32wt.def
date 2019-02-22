@@ -5,4 +5,6 @@ by Hendricks266
 See readme_e32wt.txt for information.
 */
 
+cachesize 160000000
+
 include e32wt_content.def
