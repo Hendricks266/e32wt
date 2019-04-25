@@ -1,4 +1,8 @@
 
+// Allow enough cache space for all of World Tour's data
+cachesize 160000000
+
+
 // Fix CRACKKNUCKLEWIDE xoffsets
 tilefromtexture 5129 { xoffset 15 }
 tilefromtexture 5130 { xoffset 18 }
