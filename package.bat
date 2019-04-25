@@ -1,4 +1,5 @@
 @echo off
+PATH=%PATH%;C:\Program Files\7-Zip;C:\msys64\usr\bin
 
 for /f "delims=" %%G in ('grep Release readme_e32wt.txt ^| cut -d " " -f 2') do @set releasedate=%%G
 
