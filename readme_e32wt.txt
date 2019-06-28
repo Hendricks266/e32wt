@@ -1,6 +1,6 @@
 Duke Nukem 3D: 20th Anniversary World Tour - Stopgap Compatibility Layer for EDuke32
 by Hendricks266
-Release 20190425
+Release 20190425-git
 
 https://forums.duke4.net/topic/8966-/
 
