@@ -17,23 +17,19 @@ For the time being, normal maps only work with `r_pr_artmapping 0`, for the same
 - [Stopgap Forum Thread](https://forums.duke4.net/topic/8966-/)
 
 ## To-Do List
-- Some breakable objects
-- Incinerator
-- Multiplayer Incinerator pickups are not removed
-- New projectiles
 - Invert green channel of normal maps via def token
-- Episode 5 ending
 - Classic mini-HUD armor box
 - Status bar number positioning adjustments
 - RTS new voice support
-- General stability
+- Episode 5 credits
 
 ## Credits
 
 ### Organizer
 - Hendricks266
 
-### Thanks
+### Additional Thanks
+- Nuke.YKT
 - NightFright
 - mwnn
 - asdf33
