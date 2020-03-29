@@ -7,10 +7,6 @@ var commentary 0 0 // 0 - off, 1 - on, 2 - show but don't allow playback
 dynamicremap
 
 
-// Use widescreen status bar
-define BOTTOMSTATUSBAR 5120
-
-
 // Load World Tour CON files
 include GAME.CON
 
@@ -1476,7 +1472,3 @@ appendevent EVENT_PRELEVEL
         }
     }
 endevent
-
-
-// Use widescreen weapons
-include E32WT_HUD.CON
