@@ -33,19 +33,6 @@ onevent EVENT_SPAWN
 endevent
 
 
-// This thing never disappears on its own.
-actor FIREFLYFLYINGEFFECT 0 FLYING_FRAMES
-	ifactioncount 7
-		killit
-	ifcount 2
-		nullop
-	else ifcount 1 {
-		sizeat 32 32
-		cstator 18432
-	}
-enda
-
-
 // Instantiate variables for our own use
 var wt_i 0 0
 var wt_temp 0 0
