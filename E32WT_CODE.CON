@@ -178,53 +178,53 @@ defineskillname 1 LET'S ROCK
 defineskillname 2 COME GET SOME
 defineskillname 3 DAMN, I'M GOOD
 
-definelevelname 0 0 maps/E1L1.map 01:45 00:53 HOLLYWOOD HOLOCAUST
-definelevelname 0 1 maps/E1L2.map 05:10 03:21 RED LIGHT DISTRICT
-definelevelname 0 2 maps/E1L3.map 05:35 03:41 DEATH ROW
-definelevelname 0 3 maps/E1L4.map 07:20 04:40 TOXIC DUMP
-definelevelname 0 4 maps/E1L5.map 09:10 05:00 THE ABYSS
-definelevelname 0 5 maps/E1L6.map 05:15 02:58 LAUNCH FACILITY
-definelevelname 0 6 maps/E1L7.map 05:25 03:10 FACES OF DEATH
-definelevelname 0 7 maps/E1L8.map 99:99 99:99 USER MAP
-definelevelname 0 8 maps/E1L9.map 12:48 16:32 VOID ZONE
-definelevelname 0 9 maps/E1L10.map 0T:HX 11:38 ROACH CONDO
-definelevelname 0 10 maps/E1L11.map 08:67 53:09 ANTIPROFIT
+definelevelname 0 0 maps/E1L1.MAP 01:45 00:53 HOLLYWOOD HOLOCAUST
+definelevelname 0 1 maps/E1L2.MAP 05:10 03:21 RED LIGHT DISTRICT
+definelevelname 0 2 maps/E1L3.MAP 05:35 03:41 DEATH ROW
+definelevelname 0 3 maps/E1L4.MAP 07:20 04:40 TOXIC DUMP
+definelevelname 0 4 maps/E1L5.MAP 09:10 05:00 THE ABYSS
+definelevelname 0 5 maps/E1L6.MAP 05:15 02:58 LAUNCH FACILITY
+definelevelname 0 6 maps/E1L7.MAP 05:25 03:10 FACES OF DEATH
+definelevelname 0 7 maps/E1L8.MAP 99:99 99:99 USER MAP
+definelevelname 0 8 maps/E1L9.MAP 12:48 16:32 VOID ZONE
+definelevelname 0 9 maps/E1L10.MAP 0T:HX 11:38 ROACH CONDO
+definelevelname 0 10 maps/E1L11.MAP 08:67 53:09 ANTIPROFIT
 
-definelevelname 1 0 maps/E2L1.map 02:30 01:19 SPACEPORT
-definelevelname 1 1 maps/E2L2.map 02:30 01:26 INCUBATOR
-definelevelname 1 2 maps/E2L3.map 05:00 02:26 WARP FACTOR
-definelevelname 1 3 maps/E2L4.map 04:30 02:14 FUSION STATION
-definelevelname 1 4 maps/E2L5.map 03:00 01:26 OCCUPIED TERRITORY
-definelevelname 1 5 maps/E2L6.map 02:30 01:04 TIBERIUS STATION
-definelevelname 1 6 maps/E2L7.map 04:45 02:15 LUNAR REACTOR
-definelevelname 1 7 maps/E2L8.map 11:30 04:59 DARK SIDE
-definelevelname 1 8 maps/E2L9.map 05:00 02:26 OVERLORD
-definelevelname 1 9 maps/E2L10.map 03:00 01:19 SPIN CYCLE
-definelevelname 1 10 maps/E2L11.map 03:00 00:52 LUNATIC FRINGE
+definelevelname 1 0 maps/E2L1.MAP 02:30 01:19 SPACEPORT
+definelevelname 1 1 maps/E2L2.MAP 02:30 01:26 INCUBATOR
+definelevelname 1 2 maps/E2L3.MAP 05:00 02:26 WARP FACTOR
+definelevelname 1 3 maps/E2L4.MAP 04:30 02:14 FUSION STATION
+definelevelname 1 4 maps/E2L5.MAP 03:00 01:26 OCCUPIED TERRITORY
+definelevelname 1 5 maps/E2L6.MAP 02:30 01:04 TIBERIUS STATION
+definelevelname 1 6 maps/E2L7.MAP 04:45 02:15 LUNAR REACTOR
+definelevelname 1 7 maps/E2L8.MAP 11:30 04:59 DARK SIDE
+definelevelname 1 8 maps/E2L9.MAP 05:00 02:26 OVERLORD
+definelevelname 1 9 maps/E2L10.MAP 03:00 01:19 SPIN CYCLE
+definelevelname 1 10 maps/E2L11.MAP 03:00 00:52 LUNATIC FRINGE
 
-definelevelname 2 0 maps/E3L1.map 02:30 01:11 RAW MEAT
-definelevelname 2 1 maps/E3L2.map 04:45 02:18 BANK ROLL
-definelevelname 2 2 maps/E3L3.map 03:00 01:57 FLOOD ZONE
-definelevelname 2 3 maps/E3L4.map 03:15 01:46 L.A. RUMBLE
-definelevelname 2 4 maps/E3L5.map 02:30 01:04 MOVIE SET
-definelevelname 2 5 maps/E3L6.map 03:30 01:30 RABID TRANSIT
-definelevelname 2 6 maps/E3L7.map 02:00 00:55 FAHRENHEIT
-definelevelname 2 7 maps/E3L8.map 02:15 01:09 HOTEL HELL
-definelevelname 2 8 maps/E3L9.map 02:45 01:17 STADIUM
-definelevelname 2 9 maps/E3L10.map 00:45 00:10 TIER DROPS
-definelevelname 2 10 maps/E3L11.map 02:00 01:07 FREEWAY
+definelevelname 2 0 maps/E3L1.MAP 02:30 01:11 RAW MEAT
+definelevelname 2 1 maps/E3L2.MAP 04:45 02:18 BANK ROLL
+definelevelname 2 2 maps/E3L3.MAP 03:00 01:57 FLOOD ZONE
+definelevelname 2 3 maps/E3L4.MAP 03:15 01:46 L.A. RUMBLE
+definelevelname 2 4 maps/E3L5.MAP 02:30 01:04 MOVIE SET
+definelevelname 2 5 maps/E3L6.MAP 03:30 01:30 RABID TRANSIT
+definelevelname 2 6 maps/E3L7.MAP 02:00 00:55 FAHRENHEIT
+definelevelname 2 7 maps/E3L8.MAP 02:15 01:09 HOTEL HELL
+definelevelname 2 8 maps/E3L9.MAP 02:45 01:17 STADIUM
+definelevelname 2 9 maps/E3L10.MAP 00:45 00:10 TIER DROPS
+definelevelname 2 10 maps/E3L11.MAP 02:00 01:07 FREEWAY
 
-definelevelname 3 0 maps/E4L1.map 03:04 01:32 IT'S IMPOSSIBLE
-definelevelname 3 1 maps/E4L2.map 04:00 02:00 DUKE-BURGER
-definelevelname 3 2 maps/E4L3.map 03:30 01:45 SHOP-N-BAG
-definelevelname 3 3 maps/E4L4.map 06:32 03:16 BABE LAND
-definelevelname 3 4 maps/E4L5.map 02:02 01:01 PIGSTY
-definelevelname 3 5 maps/E4L6.map 03:04 01:52 GOING POSTAL
-definelevelname 3 6 maps/E4L7.map 01:24 00:42 XXX-STACY
-definelevelname 3 7 maps/E4L8.map 03:18 01:59 CRITICAL MASS
-definelevelname 3 8 maps/E4L9.map 05:02 02:51 DERELICT
-definelevelname 3 9 maps/E4L10.map 10:50 05:25 THE QUEEN
-definelevelname 3 10 maps/E4L11.map 04:20 02:10 AREA 51
+definelevelname 3 0 maps/E4L1.MAP 03:04 01:32 IT'S IMPOSSIBLE
+definelevelname 3 1 maps/E4L2.MAP 04:00 02:00 DUKE-BURGER
+definelevelname 3 2 maps/E4L3.MAP 03:30 01:45 SHOP-N-BAG
+definelevelname 3 3 maps/E4L4.MAP 06:32 03:16 BABE LAND
+definelevelname 3 4 maps/E4L5.MAP 02:02 01:01 PIGSTY
+definelevelname 3 5 maps/E4L6.MAP 03:04 01:52 GOING POSTAL
+definelevelname 3 6 maps/E4L7.MAP 01:24 00:42 XXX-STACY
+definelevelname 3 7 maps/E4L8.MAP 03:18 01:59 CRITICAL MASS
+definelevelname 3 8 maps/E4L9.MAP 05:02 02:51 DERELICT
+definelevelname 3 9 maps/E4L10.MAP 10:50 05:25 THE QUEEN
+definelevelname 3 10 maps/E4L11.MAP 04:20 02:10 AREA 51
 
 definelevelname 4 0 maps/E5L1.map 03:15 01:38 HIGH TIMES
 definelevelname 4 1 maps/E5L2.map 05:14 03:07 RED RUCKUS
